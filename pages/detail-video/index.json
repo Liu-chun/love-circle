@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "music-header":"/components/music-header/index"
+  }
+}

@@ -1,0 +1,15 @@
+<!--components/music-item-v1/index.wxml-->
+<view class="recommend">
+  <view class="moreList">
+    <image src="{{item.al.picUrl}}" mode="widthFix"></image>
+    <view class="info">
+      <view class="right">
+        <view class="title"> {{item.name}}</view>
+        <view class="author">{{item.ar[0].name}} - {{item.name}}</view>
+      </view>
+      <view class="left">
+        <image src="../../assets/images/icons/arrow-right.png" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+</view>

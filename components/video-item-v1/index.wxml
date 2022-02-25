@@ -1,0 +1,17 @@
+<!--components/video-item-v1/index.wxml-->
+<wxs src="../../utils/formart.wxs" module="formart"></wxs>
+<view class="videoList">
+  <view class="img">
+    <image src="{{item.cover}}" mode="widthFix"></image>
+    <view class="info">
+      <view class="paly">
+        <image src="../../assets/images/icons/play_icon.png" mode="widthFix"></image>
+        <text>{{formart.formartCount(item.playCount)}}</text>
+      </view>
+      <text class="author">{{formart.formartTime(item.mv.videos[0].duration)}}</text>
+    </view>
+  </view>
+  <view class="title">
+    <text>{{item.name}} - {{item.artistName}}</text>
+  </view>
+</view>

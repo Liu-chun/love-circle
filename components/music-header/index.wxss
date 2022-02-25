@@ -1,0 +1,29 @@
+/* components/music-header/index.wxss */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 88rpx;
+}
+
+.header .title {
+  font-weight: 700;
+  font-size: 36rpx;
+}
+
+.header .more .right {
+  display: none;
+  align-items: center;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.header .more .slot:empty+.right {
+  display: flex;
+}
+
+.header .more image {
+  width: 40rpx;
+  padding-left: 10rpx;
+  margin-top: 6rpx;
+}

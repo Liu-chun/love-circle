@@ -1,0 +1,10 @@
+<view class="header">
+  <view class="title">{{title}}</view>
+  <view class="more" wx:if="{{showRight}}">
+    <view class="slot"><slot></slot></view>
+    <view class="right">
+      <text>{{rightText}}</text>
+      <image src="/assets/images/icons/arrow-right.png" mode="widthFix"></image>
+    </view>
+  </view>
+</view>

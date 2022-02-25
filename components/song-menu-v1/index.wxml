@@ -1,0 +1,9 @@
+<!--components/song-menu-v1/index.wxml-->
+<wxs src="../../utils/formart.wxs" module="formart"></wxs>
+<view class="item">
+  <view class="info">
+    <image src="{{item.coverImgUrl}}" mode="widthFix"></image>
+    <view class="playCount">{{formart.formartCount(item.playCount)}}</view>
+  </view>
+  <view class="desc">{{item.name}}</view>
+</view>
