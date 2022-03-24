@@ -1,0 +1,89 @@
+<wxs src="../../utils/formart.wxs" module="formart"></wxs>
+<!-- 背景 -->
+<image class="bg-image" src="{{songsInfo.al.picUrl}}" mode="aspectFill"></image>
+<view class="bg-cover"></view>
+<!-- 导航栏 -->
+<navigation-bar title="播放器">
+  <view class="tab" slot="middle">
+    <text class="{{currentPage === 0 ? 'active' : ''}}" bindtap="changeCurrentPage" data-index="{{0}}">歌曲</text>
+    <text class="divider">|</text>
+    <text class="{{currentPage === 1 ? 'active' : ''}}" bindtap="changeCurrentPage" data-index="{{1}}">歌词</text>
+  </view>
+</navigation-bar>
+
+<!-- 内容 -->
+<view class="container">
+  <swiper class="swipper" style="height: {{containerHeight}}px;" bindchange="handleChange">
+    <swiper-item class="swipper-item">
+      <view class="player">
+        <view class="cover">
+          <image src="{{songsInfo.al.picUrl}}" style="animation-play-state: {{!isPlaying ? 'paused': 'running'}};" mode="widthFix"></image>
+        </view>
+        <view class="songsInfo">
+          <view class="title">{{songsInfo.name}}</view>
+          <view class="songer">{{songsInfo.ar[0].name}}</view>
+          <view class="album" wx:if="{{songsInfo.alia[0]}}">专辑：《{{songsInfo.alia[0]}}》</view>
+        </view>
+        <view class="lyric" wx:if="{{aspectRatio >= 2}}">
+          {{ currentLyric.text }}
+        </view>
+        <view class="progress">
+          <slider class="slider" block-size="{{12}}" value="{{sliderVal}}" bindchange="handleChangeSlider" bindchanging="handleChangingSlider">
+          </slider>
+          <view class="time">
+            <view class="surplusTime">{{formart.formartTime(currentTime)}}</view>
+            <view class="allTime">{{formart.formartTime(durationTime) }}</view>
+          </view>
+        </view>
+        <view class="contral">
+          <image class="btn btn-order" 
+                 src="../../assets/images/player/play_{{playModeName}}.png" 
+                 bindtap="handleChangeMode"
+                 mode="widthFix"></image>
+          <image class="btn btn-prev" 
+                src="../../assets/images/player/play_prev.png" 
+                bindtap="handlePrevClick"
+                mode="widthFix"></image>
+          <image class="btn btn-pause" 
+                src="../../assets/images/player/play_{{playingName}}.png" 
+                bindtap="handleChangePlay"
+                mode="widthFix"></image>
+          <image class="btn btn-next" 
+                 src="../../assets/images/player/play_next.png" 
+                 bindtap="handleNextClick"
+                 mode="widthFix"></image>
+          <image class="btn btn-music" 
+                 src="../../assets/images/player/play_music.png" 
+                 bindtap="handleShowClick"
+                 mode="widthFix"> </image>
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item class="swipper-item">
+      <scroll-view class="lyric-scroll" scroll-y scroll-top="{{lyricScroll}}">
+        <block wx:for="{{lyricInfos}}" wx:key="index">
+          <view class="lyric-item {{currentLyricIndex===index?'show':''}}" 
+                style="padding-top:{{index === 0 ? (containerHeight / 2) - 100 : 0}}px; padding-bottom:{{index === lyricInfos.length - 1 ? (containerHeight / 2) + 100 : 0}}px">{{item.text}}</view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>
+
+<!-- 歌单 -->
+<van-popup
+  show="{{ show }}"
+  position="right"
+  custom-style="width: 50%;height: 50%;background-color: rgba(0,0,0,0.8);top: 65%;"
+  bind:close="onClose"
+  round
+  overlay="{{false}}"
+>
+<block wx:for="{{songsMenus}}" wx:key="id">
+<view class="info">
+  <view class="index">{{index + 1}}.</view>
+  <view class="name"> {{ item.name }}</view>
+</view>
+  
+</block>
+</van-popup>

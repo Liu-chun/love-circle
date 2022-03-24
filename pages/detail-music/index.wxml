@@ -1,0 +1,13 @@
+<view class="detialMusic">
+  <block wx:if="{{type==='rank'}}">
+    <view class="title">{{rankingsObj.name}}</view>
+  </block>
+  <block wx:if="{{type==='menu'}}">
+    <music-detail-header rankingsObj="{{rankingsObj}}"></music-detail-header>
+  </block>
+  <view class="item">
+    <block wx:for="{{rankingsObj.tracks}}" wx:key="id">
+      <music-item-v2 item="{{item}}" itemList="{{rankingsObj.tracks}}" index="{{index}}"></music-item-v2>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,49 @@
+/* pages/detail-video/index.wxss */
+page {
+  padding-top: 225px;
+}
+
+.video {
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+
+.titleInfo {
+  padding:0 10rpx 20rpx ;
+}
+
+.titleInfo .title {
+  font-weight: 700;
+  font-size: 42rpx;
+}
+
+.titleInfo .author {
+  font-size: 28rpx;
+  color: #333;
+  padding-left: 10rpx;
+}
+
+.recommend {
+  padding: 0 10rpx;
+}
+
+.recommend .title {
+  font-weight: 700;
+  font-size: 42rpx;
+  padding: 20rpx 0;
+}
+
+.recommend .moreList {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 10rpx;
+}
+
+.recommend .moreList .info {
+  width: 48%;
+}
+.recommend .moreList image {
+  width: 48%;
+}

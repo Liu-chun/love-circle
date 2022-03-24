@@ -1,0 +1,65 @@
+/* pages/detail-search/index.wxss */
+page {
+  padding: 0 10rpx;
+}
+
+.search {
+  position: fixed;
+  width: 100%;
+}
+
+.hotSearch {
+  padding-top: 108rpx;
+}
+
+.hotList {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 20rpx;
+  /* padding-top: 108rpx; */
+}
+
+.title {
+  margin-right: 40rpx;
+  margin-bottom: 20rpx;
+}
+
+.title:first-of-type {
+  /* color: rgb(2, 255, 44); */
+  color: red;
+}
+
+.suggest {
+  padding-top: 108rpx;
+
+}
+
+.suggest .suggestItem {
+  display: flex;
+  align-items: center;
+}
+
+.suggest .suggestItem image {
+  /* display: flex; */
+  width: 60rpx;
+  height: 60rpx;
+  vertical-align: middle;
+}
+
+.suggest .keyword {
+  color: red;
+  padding: 20rpx 0;
+}
+
+.van-search view {
+  display: flex;
+}
+
+.result {
+  padding-top: 108rpx;
+}
+
+.result .title {
+  font-size: 36rpx;
+}

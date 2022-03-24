@@ -1,0 +1,34 @@
+page {
+  color: #fff;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.nav-bar .left,
+.right {
+  width: 120rpx;
+}
+
+.nav-bar .left {
+  font-size: 42rpx;
+}
+
+.arrow-left{
+  display: none;
+}
+
+.left-slot:empty+.arrow-left {
+  display: block;
+}
+.middle-right{
+  display: none;
+}
+
+.middle-slot:empty + .middle-right {
+  display: block;
+}

@@ -1,0 +1,49 @@
+/* components/music-item-v1/index.wxss */
+
+.recommend {
+  padding: 0 10rpx;
+}
+
+
+.recommend .moreList {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 10rpx;
+
+}
+
+.recommend .moreList .info {
+  width: 78%;
+}
+
+.recommend .moreList image {
+  width: 20%;
+  border-radius: 5%;
+  /* height: 88rpx; */
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info .right {
+  display: flex;
+  flex-flow: column;
+  align-content: space-around;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #777777;
+  padding-left: 20rpx;
+}
+
+.info .right .author {
+  padding-top:  20rpx;
+}
+
+.info .left image {
+  width: 50rpx;
+  height: 50rpx;
+}

@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "music-header":"/components/music-header/index",
+    "song-menu-v1":"/components/song-menu-v1/index"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "music-item-v2":"/components/music-item-v2/index",
+    "music-detail-header":"/pages/detail-music/components/music-detail-header/index"
+  }
+}

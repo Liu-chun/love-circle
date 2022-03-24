@@ -1,0 +1,18 @@
+<wxs src="../../utils/formart.wxs" module="formart"></wxs>
+<view class="peak">
+  <view class="peakList">
+    <view class="right">
+      <view class="title">{{item.name}}</view>
+      <view class="songList">
+        <view class="songList-item" wx:for="{{item.tracks}}" wx:for-item="items" wx:key="id">
+          <text class="songName">{{index+1}}. {{items.name}} - </text>
+          <text class="author">{{items.ar[0].name}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="left">
+      <image wx:if="{{item.coverImgUrl&&item.coverImgUrl!=''}}" src=" {{item.coverImgUrl}}" mode="widthFix"></image>
+      <view class="playCount">{{formart.formartCount(item.playCount)}}</view>
+    </view>
+  </view>
+</view>

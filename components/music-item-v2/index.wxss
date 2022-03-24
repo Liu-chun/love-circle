@@ -1,0 +1,28 @@
+/* components/music-item-v2/index.wxss */
+.item {
+  display: flex;
+  align-items: center;
+  padding-bottom: 20rpx;
+}
+
+.item .index {
+  font-weight: 600;
+  margin-right: 20rpx;
+}
+
+
+
+.item .title {
+  font-weight: 600;
+}
+
+.item .author text {
+  font-size: 28rpx;
+  color: #777;
+  margin: 10rpx 0 0 10rpx;
+}
+
+.item .author image {
+  width: 50rpx;
+  vertical-align: middle;
+}

@@ -1,0 +1,28 @@
+<wxs src="../../../../utils/formart.wxs" module="formart"></wxs>
+<div class="header">
+  <image src="{{rankingsObj.coverImgUrl}}" mode="aspectFill"></image>
+  <view class="bg-cover"></view>
+  <view class="cont">
+    <image src="{{rankingsObj.coverImgUrl}}" mode="aspectFill"></image>
+    <view class="rightInfo">
+      <view class="tit">{{rankingsObj.name}}</view>
+      <view class="author">
+        <image src="{{rankingsObj.creator.avatarUrl}}" mode="aspectFill"></image>
+        <text>{{rankingsObj.creator.nickname}}</text>
+      </view>
+      <view class="desc">
+        {{rankingsObj.description}}
+      </view>
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="love">
+      <image src="../../../../assets/images/icons/favor_icon.png" mode="widthFix"></image>
+      <text>{{formart.formartCount(rankingsObj.playCount)}}</text>
+    </view>
+    <view class="share">
+      <image src="../../../../assets/images/icons/share_icon.png" mode="widthFix"></image>
+      <text>分享</text>
+    </view>
+  </view>
+</div>

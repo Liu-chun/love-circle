@@ -1,0 +1,26 @@
+<!--pages/detail-video/index.wxml-->
+<wxs src="../../utils/formart.wxs" module="formart"></wxs>
+<view class="cont">
+  <video class="video" src="{{mvUrl.url}}"
+                      referrer-policy="origin"
+                      show-mute-btn 
+                      enable-auto-rotation 
+                      autoplay
+                      loop
+                      vslide-gesture>
+  </video>
+  <view class="titleInfo">
+    <view class="title">{{mvDetail.name}}</view>
+    <view class="author">演唱者 - {{mvDetail.artistName}}</view>
+    <view class="author">播放量：{{formart.formartCount(mvDetail.playCount)}} - {{mvDetail.publishTime}}</view>
+  </view>
+  <view class="recommend">
+    <music-header title="推荐视频" showRight="{{false}}"></music-header>
+    <block wx:for="{{relatedList}}" wx:key="id">
+      <view class="moreList">
+        <image src="{{item.coverUrl}}" mode="widthFix"></image>
+        <text class="info">{{item.title}}</text>
+      </view>
+    </block>
+  </view>
+</view>

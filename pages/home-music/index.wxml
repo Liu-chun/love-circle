@@ -1,2 +1,46 @@
 <!--pages/home-music/index.wxml-->
-<text>pages/home-music/index.wxml</text>
+<!-- 搜索框 -->
+<van-search bind:click-input="handleSearchClick" shape="round" background="#fafafa" disabled placeholder="请搜索你喜欢的歌曲" />
+<!-- 轮播图 -->
+<swiper class="swipper" style="height:{{swipperHeight}}px" indicator-dots autoplay circular>
+  <block wx:for="{{banners}}" wx:key="id">
+    <swiper-item class="swipper-item">
+      <image class="swipper-image" src="{{item.pic}}" mode="widthFix" bindload="handleImageLoad"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 推荐歌曲 -->
+<view class="recommend" wx:if="{{recommend.length}}">
+  <music-header title="推荐歌曲" bindmore="moreClick"></music-header>
+  <block wx:for="{{recommend}}" wx:key="id">
+    <music-item-v1 item="{{item}}" bindtap="handleSongsClick" data-index="{{index}}"></music-item-v1>
+  </block>
+</view>
+<!-- 歌单 -->
+<view class="hotMenu" wx:if="{{hotmMenuList.length}}">
+  <song-menu title="热门歌单" menuList="{{hotmMenuList}}"></song-menu>
+</view>
+<view class="recommendMenu" wx:if="{{menuList.length}}">
+  <song-menu title="推荐歌单" menuList="{{menuList}}"></song-menu>·
+</view>
+<!-- 巅峰榜 -->
+<view class="peak" wx:if="{{menuList.length}}">
+  <music-header title="巅峰榜"></music-header>
+  <block wx:for="{{rankings}}" wx:key="index">
+    <peak item="{{item}}" bindtap="handleItemClick" data-idx="{{index}}"></peak>
+  </block>
+</view>
+<!-- 播放器 -->
+<view class="player" wx:if="{{ songsInfo.id }}" bindtap="handleToPlayClick">
+  <view class="player-left">
+    <image src="{{ songsInfo.al.picUrl }}" style="animation-play-state: {{!isPlaying ? 'paused' : 'running'}};" mode="widthFix"></image>
+    <view class="songinfo">
+      <text>{{ songsInfo.name }}</text>
+      <text class="lyric">{{ currentLyric.text }}</text>
+    </view>
+  </view>
+  <view class="player-right">
+    <image src="../../assets/images/music/{{!isPlaying ? 'play' : 'pause'}}_icon.png" catchtap="handlePlayClick" mode="widthFix"></image>
+    <image src="../../assets/images/music/playlist_icon.png" mode="widthFix"></image>
+  </view>
+</view>
